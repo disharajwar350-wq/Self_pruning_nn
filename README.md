@@ -1,6 +1,6 @@
 # Self-Pruning Neural Network
 A feed-forward network that learns to prune its own weights during training using learnable gates — no post-training pruning needed.
-Built for CIFAR-10 image classification as part of the Tredence AI Engineering Internship case study.
+Built for CIFAR-10 image classification.
 
 ## How It Works
 Each weight has a gate value between 0 and 1 (via sigmoid). Adding an L1 
