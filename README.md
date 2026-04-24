@@ -3,7 +3,9 @@ A feed-forward network that learns to prune its own weights during training usin
 Built for CIFAR-10 image classification as part of the Tredence AI Engineering Internship case study.
 
 ## How It Works
-Each weight has a paired learnable gate (via sigmoid). An L1 sparsity penalty pressures gates toward zero during training. The optimizer balances two objectives — classify correctly, and keep as few active weights as possible.
+Each weight has a gate value between 0 and 1 (via sigmoid). Adding an L1 
+penalty on these gates to the loss pushes them toward zero — the optimizer 
+ends up killing weights that aren't useful enough to justify keeping.
 
 Total Loss = CrossEntropy + λ × Σ sigmoid(gate_scores)
 
